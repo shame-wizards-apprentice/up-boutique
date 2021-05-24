@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Header from '../components/Header/index';
 
 const About = () => {
   return (
@@ -7,6 +8,7 @@ const About = () => {
         <title>About Page</title>
       </Head>
       <div className='page-wrapper'>
+        <Header />
         <main>
           <h2>About UP Boutique.</h2>
           <p>
