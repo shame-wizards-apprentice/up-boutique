@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Header from '../components/Header/index';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const About = () => {
   return (
@@ -30,6 +31,7 @@ const About = () => {
             voluptates cumque quas tempore.
           </p>
         </main>
+        <Footer />
       </div>
     </>
   );
