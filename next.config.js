@@ -3,4 +3,7 @@ module.exports = {
     options: {
       dist: 'out_publish',
     },
+    images: {
+      domains: ['media.graphcms.com']
+    }
   };
