@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './header.module.css';
 
 const navItems = [
     {
@@ -13,16 +14,16 @@ const navItems = [
 
 const Header = () => {
     return (
-        <header>
-            <div>
+        <header className={styles.header}>
+            <div className={styles['header-wrapper']}>
                 <Link href='/'>
-                    <a>UP</a>
+                    <a className={styles['header-logo']}>UP</a>
                 </Link>
 
-                <nav>
+                <nav className={styles['header-nav']}>
                     {navItems.map(({ path, label }) => (
                         <Link key={path} href={path}>
-                            <a>{label}</a>
+                            <a className={styles['header-link']}>{label}</a>
                         </Link>
                     ))}
                 </nav>
