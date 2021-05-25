@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { getProductList } from '../../utils/products';
+import ProductList from '../../components/ProductList';
 
 const Products = ({ productList }) => {
     return (
@@ -12,7 +13,7 @@ const Products = ({ productList }) => {
             <div className='page-wrapper'>
                 <Header bgImage={'/images/featured-3.png'} />
                 <main>
-                    <pre>{JSON.stringify(productList, null, 2)}</pre>
+                    <ProductList products={productList}/>
                 </main>
                 <Footer />
             </div>

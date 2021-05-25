@@ -22,7 +22,7 @@ const SingleProduct = ({ product }) => {
           <h3 className={styles['product-price']}>${price}</h3>
           <p
             className={styles['product-description']}
-            dangerouslySetInnerHTML={{ __html: description.html }}
+            dangerouslySetInnerHTML={{ __html: description }}
           />
         </div>
       </div>
