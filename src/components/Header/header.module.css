@@ -52,12 +52,14 @@
     transition: all 0.25s ease-in;
   }
   
-  .header-link:hover,
-  .header-link:active,
-  .header-link:focus {
-    color: var(--primary-500);
-    background-color: var(--primary-100);
-  }
+.header-link-active,
+.header-link:hover,
+.header-link:active,
+.header-link:focus {
+  color: var(--primary-500);
+  background-color: var(--primary-100);
+}
+
   
   @media screen and (min-width: 768px) {
     .header-logo {

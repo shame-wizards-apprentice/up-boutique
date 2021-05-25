@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './header.module.css';
+import { useRouter } from 'next/router';
 
 const navItems = [
     {
@@ -13,6 +14,7 @@ const navItems = [
 ];
 
 const Header = () => {
+    const router = useRouter();
     return (
         <header className={styles.header}>
             <div className={styles['header-wrapper']}>
@@ -23,7 +25,13 @@ const Header = () => {
                 <nav className={styles['header-nav']}>
                     {navItems.map(({ path, label }) => (
                         <Link key={path} href={path}>
-                            <a className={styles['header-link']}>{label}</a>
+                            <a
+                                className={`${styles['header-link']} ${router && router.pathname.includes(path)
+                                        ? styles['header-link-active']
+                                        : ''
+                                    }`}
+
+                            >{label}</a>
                         </Link>
                     ))}
                 </nav>
