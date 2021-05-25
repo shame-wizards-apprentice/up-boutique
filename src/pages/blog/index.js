@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { getPostList } from '../../utils/posts';
+import PostList from '../../components/PostList';
 
 const Blog = ({ postList }) => {
     return (
@@ -12,7 +13,7 @@ const Blog = ({ postList }) => {
             <div className='page-wrapper'>
                 <Header />
                 <main>
-                    <pre>{JSON.stringify(postList, null, 2)}</pre>
+                    <PostList posts={postList} />
                 </main>
                 <Footer />
             </div>
