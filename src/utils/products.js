@@ -54,7 +54,7 @@ export const getProductData = async (productSlug) => {
           price
           id
           description {
-            html
+              html
           }
           slug
           productImage {
