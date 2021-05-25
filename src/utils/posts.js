@@ -33,3 +33,34 @@ export const getPostList = () => {
       }
     });
   };
+
+  export const getPostSlugs = () => {
+    const fileNames = fs.readdirSync(postsDirectory);
+  
+    return fileNames.map((fileName) => {
+      return {
+        params: {
+          slug: fileName.replace(/\.md|\.mdx$/, ''),
+        },
+      };
+    });
+  };
+
+  export const getPostData = async (slug) => {
+    const fullPath = path.join(postsDirectory, `${slug}.md`);
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+  
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const postContent = processedContent.toString();
+  
+    // Combine the data with the slug
+    return {
+      slug,
+      postContent,
+      ...matterResult.data,
+    };
+  };
