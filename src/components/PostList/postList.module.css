@@ -57,8 +57,20 @@
     color: var(--primary-100);
     background-color: var(--primary-500);
   }
+
+  .post-image-wrapper {
+    flex: 1;
+    position: relative;
+    min-height: 200px;
+    min-width: 100%;
+    cursor: pointer;
+  }
   
   @media screen and (min-width: 768px) {
+    .post-image-wrapper {
+      min-width: unset;
+    }
+    
     .post-item {
       flex-direction: row;
     }
