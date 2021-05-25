@@ -9,7 +9,7 @@ const About = () => {
         <title>About Page</title>
       </Head>
       <div className='page-wrapper'>
-        <Header />
+        <Header bgImage='/images/featured-2.png' />
         <main>
           <h2>About UP Boutique.</h2>
           <p>
